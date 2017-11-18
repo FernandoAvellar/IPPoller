@@ -1,0 +1,5 @@
+apply plugin: 'war'
+jar.enabled = false 
+dependencies {
+	compile project(':ippoller-impl')
+}

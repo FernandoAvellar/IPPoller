@@ -1,0 +1,1 @@
+include "ippoller-ear", "ippoller-war", "ippoller-api", "ippoller-impl", "ippoller-ejb", "ippoller-ejb-client"

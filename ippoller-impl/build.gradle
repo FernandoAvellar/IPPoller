@@ -1,0 +1,4 @@
+dependencies {
+	compile project(':ippoller-api')
+	compile project(':ippoller-ejb-client')
+}

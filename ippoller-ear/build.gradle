@@ -1,0 +1,23 @@
+apply plugin: 'ear'
+
+dependencies {
+	deploy project(path: ':ippoller-war', configuration: 'archives')
+	deploy project(path: ':ippoller-ejb')
+	earlib project(':ippoller-api')
+	earlib project(':ippoller-impl')
+	earlib project(':ippoller-ejb-client')
+}
+
+ear {
+	deploymentDescriptor {
+		def warName = project(':ippoller-war').name
+		def warVersion = project(':ippoller-war').version
+		def warFileName = warName + '-' + warVersion + '.war'
+		webModule(warFileName, 'ippoller')
+		
+		def ejbName = project(':ippoller-ejb').name
+		def ejbVersion = project(':ippoller-ejb').version
+		def ejbFileName = ejbName + '-' + ejbVersion + '.jar'
+		module(ejbFileName, 'ejb')
+	}
+}

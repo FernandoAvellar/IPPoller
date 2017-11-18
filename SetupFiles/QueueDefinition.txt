@@ -1,0 +1,3 @@
+	
+QueueName: IPPollerQueue
+jndi: java:/jms/queue/ippollerqueue
