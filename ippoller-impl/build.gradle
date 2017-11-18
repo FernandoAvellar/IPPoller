@@ -1,4 +1,8 @@
 dependencies {
 	compile project(':ippoller-api')
 	compile project(':ippoller-ejb-client')
+	
+	// https://mvnrepository.com/artifact/commons-net/commons-net
+	compile group: 'commons-net', name: 'commons-net', version: '3.6'
+	
 }

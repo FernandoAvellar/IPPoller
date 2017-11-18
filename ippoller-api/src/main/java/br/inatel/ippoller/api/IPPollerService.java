@@ -10,9 +10,9 @@ import javax.ws.rs.core.MediaType;
 public interface IPPollerService {
 
 	@GET
-	@Path("/start/{ipNetworkAddress}/{mask}")
+	@Path("/start/{ipNetworkAddress}/{cidrMask}")
 	@Produces(MediaType.TEXT_HTML)
-	void startPoller(@PathParam("ipNetworkAddress") String ipNetworkAddress, @PathParam("mask") String mask);
+	void startPoller(@PathParam("ipNetworkAddress") String ipNetworkAddress, @PathParam("cidrMask") String cidrMask);
 
 	@GET
 	@Path("/status/{ipAddress}")
