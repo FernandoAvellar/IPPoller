@@ -1,5 +1,7 @@
 package br.inatel.ippoller.beans;
 
+import java.util.List;
+
 import javax.ejb.EJB;
 
 import br.inatel.ippoller.dao.IPStatusDAO;
@@ -10,7 +12,10 @@ public class IPPollerBean implements IPPollerLocal, IPPollerRemote {
 
 	@EJB
 	private IPStatusDAO ipstatusDAO;
-	
+
+	@EJB
+	private IPPollerMessageSender messageSender;
+
 	@Override
 	public boolean getStatus(String ipAddress) {
 		return ipstatusDAO.getStatus(ipAddress);
@@ -21,4 +26,8 @@ public class IPPollerBean implements IPPollerLocal, IPPollerRemote {
 		ipstatusDAO.insertHost(hostIp, status);
 	}
 
+	@Override
+	public void enviaMensagem(List<String> hostAddressesList) {
+		messageSender.sendMessage(hostAddressesList);
+	}
 }

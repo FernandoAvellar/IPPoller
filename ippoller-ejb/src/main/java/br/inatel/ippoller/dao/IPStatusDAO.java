@@ -26,5 +26,9 @@ public class IPStatusDAO {
 		hostEntity.setStatus(status);
 		em.persist(hostEntity);
 	}
+	
+	public static void main(String[] args) {
+		System.out.println(new IPStatusDAO().getStatus("146.250.130.5"));
+	}
 
 }
