@@ -16,6 +16,6 @@ public interface IPPollerService {
 
 	@GET
 	@Path("/status/{ipAddress}")
-	@Produces(MediaType.TEXT_HTML)
+	@Produces(MediaType.TEXT_PLAIN)
 	boolean getStatus(@PathParam("ipAddress") String ipAddress);
 }
